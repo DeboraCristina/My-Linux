@@ -52,7 +52,7 @@ alias tc="./a.out ; rm a.out" #testar codigo
 alias norm="norminette -R CheckForbiddenSourceHeader"
 
 ##################################################
-#    Atalhos de compilação C
+#    Atalhos de compilaÃ§Ã£o C
 ##################################################
 vmain()
 {
@@ -82,6 +82,6 @@ roda()
 #    Macros mais usadas Vim
 ##################################################
 #abrir tudo ggVGzO
-#fechar tudo ggVGzM€ýa
+#fechar tudo ggVGzMâ‚¬Ã½a
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ #
