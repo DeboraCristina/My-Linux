@@ -3,6 +3,8 @@ let $config = '~/Home-Config/Vim-Configs/MyVimConfig'
 source $config
 #InstallVundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"In vim Comand mode
+PluginInstall
 #InstallYCM
 cd ~/.vim/bundle/YouCompleteMe | python3 install.py --"language"
 "C-Family
