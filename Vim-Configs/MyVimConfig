@@ -1,0 +1,186 @@
+"               _
+"  _______     //   __
+" |       \ ______ |  |
+" |   __   /   _  \|  |___   ____  __ ___  ____ 
+" |  |  |  |  |_|  |  __  \ / __ \|  '   |/ __ \
+" |  |__|  |  ____/| |  |  | |  | |   ___| |  | |
+" |        |  \__  | |__|  | |__| |  |   | |__| |_
+" |_______/ \____| |__.___/ \____/|__|    \_____.__|
+"
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vundle For Managing Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    set nocompatible              " be iMproved, required
+    filetype off                  " required
+
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+
+	Plugin 'VundleVim/Vundle.vim'
+	Plugin 'itchyny/lightline.vim'					" Lightline Status Bar
+	Plugin 'vimwiki/vimwiki'						" Vim Wiki
+	Plugin 'ryanoasis/vim-devicons'					" Add some pretty icons
+	Plugin 'ap/vim-css-color'						" Color previews for CSS
+	Plugin 'jiangmiao/auto-pairs'					" Auto-pairs
+	Plugin 'mattn/emmet-vim'						" Emment HTML5
+	Plugin 'othree/html5.vim'						" Emment HTML5
+	Plugin 'Valloric/YouCompleteMe'					 " YouCompleteMe
+	Plugin 'loremipsum'								" Loremipsum
+	Plugin 'junegunn/vim-peekaboo'					" Register Vim
+	Plugin 'sheerun/vim-polyglot'					" Language packs for Vim.
+	Plugin '42Paris/42header'						" Header 42
+	Plugin 'debbyheader'
+
+
+    call vundle#end()            " required
+    filetype plugin indent on    " required
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Powerline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Set lightline color scheme
+    let g:lightline = {
+          \ 'colorscheme': 'deus',
+          \ }
+
+    " Always show statusline
+    set laststatus=2
+
+    " Use 256 colours (Use this setting only if your terminal supports 256 colours)
+    set t_Co=256
+
+    " Uncomment to prevent non-normal modes showing in powerline and below powerline.
+    set noshowmode
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Headers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	let g:user42 = 'desilva'
+	let g:mail42 = 'dede-2231@hotmail.com'
+
+	let g:user = 'Debora'
+
+	"map <c-h> :Header
+	map <c-4> :Header42<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Lines, text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Use spaces instead of tabs
+    "set expandtab
+
+    " Be smart when using tabs ;)
+    set smarttab
+
+    " 1 tab == 4 spaces
+    set shiftwidth=4
+    set tabstop=4
+    set noet
+    %retab!
+
+    " Lines
+    syntax enable
+    set relativenumber
+    set number
+    let g:rehash256 = 1
+
+    "Cursor
+    set guicursor=n:block
+
+	" Tab visible
+	set listchars=eol:$,tab:-->,trail:~,extends:>,precedes:<
+	set list
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Mouse Scrolling
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    "set mouse=n
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Splits and Tabbed Files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    set splitbelow splitright
+
+    set path+=**					" Searches current directory recursively.
+    set wildmenu					" Display all matches when tab complete.
+    set incsearch
+    set nobackup
+    set noswapfile
+
+    let g:minimap_highlight='Visual'
+
+    set guioptions-=m  " Remove menu bar
+    set guioptions-=T  " Remove toolbar
+    set guioptions-=r  " Remove right-hand scroll bar
+    set guioptions-=L  " Remove left-hand scroll bar
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Folding
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    set foldmethod=indent
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => YouCompleteMe
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Start autocompletion after 4 chars
+    let g:ycm_min_num_of_chars_for_completion = 2
+    let g:ycm_min_num_identifier_candidate_chars = 2
+    let g:ycm_enable_diagnostic_highlighting = 0 
+
+    let g:ycm_auto_hover=''
+
+    "Don't show YCM's preview window [ I find it really annoying ]
+    "set completeopt-=preview
+    let g:ycm_add_preview_to_completeopt = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Emmet HTML5
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    let g:user_emmet_install_global = 0
+    autocmd FileType html,css EmmetInstall
+    let g:user_emmet_leader_key=','
+    "map ntt i!,,
+    "augroup html "{
+    "    au!
+    "    au FileType html map mht i!,,
+    ""}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Mapeamento de teclas
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    "setinhas
+        map j <left>
+        map k <right>
+        map l <down>
+        map h <up>
+
+    "inicio e fim da linha
+        map f $
+        map t 0
+        map gf G
+
+    "esc mais pertinho
+        imap 3f <esc>
+
+    "salvar/salvar e sair
+        map mm :w<cr>
+        map ms :wq<cr>
+        map mas :wqa<cr>
+        map mfs :q!<cr>
+        map mfa :qa!<cr>
+
+    "tab
+        map etn :tabnew<space>
+        map eta :tab ball<cr>
+        map <c-j> <c-pageup>
+        map <c-k> <c-pagedown>
+
+    "split
+        map <space>j <c-w>h
+        map <space>k <c-w>l
+        cmap s<cr> vsplit<cr>map 
+
+	"move line
+		map <c-h> :m .-2<cr>
+		map <c-l> :m .+1<cr>
