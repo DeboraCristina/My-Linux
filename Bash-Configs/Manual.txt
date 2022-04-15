@@ -1,2 +1,2 @@
 Paste in your *.rc config 
-source ~/Home-Config/Bash-Configs/meusalias.sh
+source ~/Home-Config/Bash-Configs/MyRcConfig.sh
