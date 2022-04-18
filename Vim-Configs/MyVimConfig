@@ -25,7 +25,7 @@
 	Plugin 'jiangmiao/auto-pairs'					" Auto-pairs
 	Plugin 'mattn/emmet-vim'						" Emment HTML5
 	Plugin 'othree/html5.vim'						" Emment HTML5
-	Plugin 'Valloric/YouCompleteMe'					 " YouCompleteMe
+	"Plugin 'Valloric/YouCompleteMe'					 " YouCompleteMe
 	Plugin 'loremipsum'								" Loremipsum
 	Plugin 'junegunn/vim-peekaboo'					" Register Vim
 	Plugin 'sheerun/vim-polyglot'					" Language packs for Vim.

@@ -2,19 +2,26 @@
 #!/bin/bash
 
 ##################################################
-#    Inicio
+#	Temporario p/ libft
+##################################################
+alias libft="cd ; cd 42curso/Libft/ ; c"
+alias projeto="cd ; cd 42curso/Libft/Projeto ; c"
+alias testes="cd ; cd 42curso/Libft/Testes ; c"
+
+##################################################
+#	Inicio
 ##################################################
 clear ; ls -pm
-chmod 777 *
+#chmod 777 *
 
 ##################################################
-#   Shell Utilits
+#	Shell Utilits
 ##################################################
-source ~/.shell_utilits/chmod-help
-source ~/.shell_utilits/baseMain.sh
+source ~/My-Linux/Bash-Configs/chmod-help
+source ~/My-Linux/Bash-Configs/baseMain.sh
 
 ##################################################
-#    Atalhos curtos
+#	Atalhos curtos
 ##################################################
 #alias c="clear ; echo Ola, Mundo!"
 alias c=clear
@@ -25,7 +32,7 @@ alias z=zsh
 alias ndi=mkdir
 
 ##################################################
-#    Editar Bashrc, Zshrc, Vimrc e Meus alias
+#	Editar Bashrc, Zshrc, Vimrc e Meus alias
 ##################################################
 #editar meus alias
 alias val='vim ~/meusalias.sh'
@@ -37,7 +44,7 @@ alias vzsh='vim ~/.zshrc'
 alias vvim='vim ~/.vimrc'
 
 ##################################################
-#    Abreviacoes pro git
+#	Abreviacoes pro git
 ##################################################
 alias gs="git status"
 alias ga="git add"
@@ -45,14 +52,14 @@ alias gc="git commit"
 alias clone="git clone"
 
 ##################################################
-#    Coding in C
+#	Coding in C
 ##################################################
 alias rc="gcc -Wall -Wextra -Werror" #rodar .c
 alias tc="./a.out ; rm a.out" #testar codigo
 alias norm="norminette -R CheckForbiddenSourceHeader"
 
 ##################################################
-#    Atalhos de compilação C
+#	Atalhos de compilação C
 ##################################################
 vmain()
 {
@@ -79,7 +86,7 @@ roda()
 }
 
 ##################################################
-#    Macros mais usadas Vim
+#	Macros mais usadas Vim
 ##################################################
 #abrir tudo ggVGzO
 #fechar tudo ggVGzM€ýa
