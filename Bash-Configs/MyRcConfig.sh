@@ -1,4 +1,4 @@
-# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ #
+# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ #
 #!/bin/bash
 
 ##################################################
@@ -19,12 +19,13 @@ clear ; ls -pm
 ##################################################
 source ~/My-Linux/Bash-Configs/chmod-help
 source ~/My-Linux/Bash-Configs/baseMain.sh
+source ~/My-Linux/Bash-Configs/shell-calculator.sh
 
 ##################################################
 #	Atalhos curtos
 ##################################################
-#alias c="clear ; echo Ola, Mundo!"
 alias c=clear
+alias cls="clear ; ls"
 alias py="python3"
 alias b=bash
 alias v=vim
@@ -35,13 +36,13 @@ alias ndi=mkdir
 #	Editar Bashrc, Zshrc, Vimrc e Meus alias
 ##################################################
 #editar meus alias
-alias val='vim ~/meusalias.sh'
+alias val='vim ~/My-Linux/Bash-Configs/MyRcConfig.sh'
 #editar bashrc
 alias vbash='vim ~/.bashrc'
 #editar zsh
 alias vzsh='vim ~/.zshrc'
 #editar vimrc
-alias vvim='vim ~/.vimrc'
+alias vvim='vim ~/My-Linux/Bash-Configs/MyVimConfig'
 
 ##################################################
 #	Abreviacoes pro git
@@ -50,6 +51,8 @@ alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
 alias clone="git clone"
+alias git-manda="git push"
+alias git-puxa="git pull"
 
 ##################################################
 #	Coding in C
@@ -91,4 +94,4 @@ roda()
 #abrir tudo ggVGzO
 #fechar tudo ggVGzM€ýa
 
-# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ #
+# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ #
