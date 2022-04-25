@@ -70,6 +70,5 @@ div()
 
 len()
 {
-	local="$(pwd)/len.py"
-	python3 $local $1
+	python3 ~/My-Linux/Bash-Configs/len.py $1
 }
