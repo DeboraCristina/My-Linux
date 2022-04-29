@@ -2,13 +2,6 @@
 #!/bin/bash
 
 ##################################################
-#	Temporario p/ libft
-##################################################
-alias libft="cd ; cd 42curso/Libft/ ; c"
-alias projeto="cd ; cd 42curso/Libft/Projeto ; c"
-alias testes="cd ; cd 42curso/Libft/Testes ; c"
-
-##################################################
 #	Inicio
 ##################################################
 clear ; ls -pm
@@ -20,6 +13,7 @@ clear ; ls -pm
 source ~/My-Linux/Bash-Configs/chmod-help
 source ~/My-Linux/Bash-Configs/baseMain.sh
 source ~/My-Linux/Bash-Configs/shell-calculator.sh
+source ~/My-Linux/Bash-Configs/compile-flags.sh
 
 ##################################################
 #	Atalhos curtos
@@ -49,7 +43,7 @@ alias vvim='vim ~/My-Linux/Bash-Configs/MyVimConfig'
 ##################################################
 alias gs="git status"
 alias ga="git add"
-alias gc="git commit"
+alias gc="git commit -m "
 alias clone="git clone"
 alias git-manda="git push"
 alias git-puxa="git pull"
