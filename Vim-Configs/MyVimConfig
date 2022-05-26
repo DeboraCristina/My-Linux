@@ -30,7 +30,7 @@
 	Plugin 'junegunn/vim-peekaboo'					" Register Vim
 	Plugin 'sheerun/vim-polyglot'					" Language packs for Vim.
 	Plugin '42Paris/42header'						" Header 42
-	Plugin 'debbyheader'
+	"Plugin 'debbyheader'
 
 
     call vundle#end()            " required
@@ -61,8 +61,7 @@
 
 	let g:user = 'Debora'
 
-	"map <c-h> :Header
-	map <c-4> :Header42<cr>
+	"map <c-4> :Header42<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Lines, text, tab and indent related
@@ -149,37 +148,41 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mapeamento de teclas
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    "setinhas
-        map j <left>
-        map k <right>
-        map l <down>
-        map h <up>
+	"setinhas
+		map j <left>
+		map k <right>
+		map l <down>
+		map h <up>
 
-    "inicio e fim da linha
-        map f $
-        map t 0
-        map gf G
+	"inicio e fim da linha
+		map f $
+		map t 0
+		map gf G
 
-    "esc mais pertinho
-        imap 3f <esc>
+	"esc mais pertinho
+		imap 3f <esc>
+		imap 3F <esc>
+	
+	"selecionar linha
+		map <space>v <c-v>
 
-    "salvar/salvar e sair
-        map mm :w<cr>
-        map ms :wq<cr>
-        map mas :wqa<cr>
-        map mfs :q!<cr>
-        map mfa :qa!<cr>
+	"salvar/salvar e sair
+		map mm :w<cr>
+		map ms :wq<cr>
+		map mas :wqa<cr>
+		map mfs :q!<cr>
+		map mfa :qa!<cr>
 
-    "tab
-        map etn :tabnew<space>
-        map eta :tab ball<cr>
-        map <c-j> <c-pageup>
-        map <c-k> <c-pagedown>
+	"tab
+		map etn :tabnew<space>
+		map eta :tab ball<cr>
+		map <space>h <c-pageup>
+		map <space>l <c-pagedown>
 
-    "split
-        map <space>j <c-w>h
-        map <space>k <c-w>l
-        cmap s<cr> vsplit<cr>map 
+	"split
+		map <space>j <c-w>h
+		map <space>k <c-w>l
+		cmap s<cr> vsplit<cr>map 
 
 	"move line
 		map <c-h> :m .-2<cr>
