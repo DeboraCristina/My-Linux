@@ -19,7 +19,7 @@ source ~/My-Linux/Bash-Configs/compile-flags.sh
 #	Atalhos curtos
 ##################################################
 alias c=clear
-alias cls="clear ; ls"
+alias cls="clear ; ls -mp"
 alias py="python3"
 alias b=bash
 alias v=vim
@@ -36,14 +36,15 @@ alias vbash='vim ~/.bashrc'
 #editar zsh
 alias vzsh='vim ~/.zshrc'
 #editar vimrc
-alias vvim='vim ~/My-Linux/Bash-Configs/MyVimConfig'
+alias vvim='vim ~/My-Linux/Vim-Configs/MyVimConfig'
 
 ##################################################
 #	Abreviacoes pro git
 ##################################################
 alias gs="git status"
+alias cgs="clear;git status"
 alias ga="git add"
-alias gc="git commit -m "
+alias gc-m="git commit -m"
 alias clone="git clone"
 alias git-manda="git push"
 alias git-puxa="git pull"
@@ -51,36 +52,13 @@ alias git-puxa="git pull"
 ##################################################
 #	Coding in C
 ##################################################
-alias rc="gcc -Wall -Wextra -Werror" #rodar .c
+alias rc="cc -Wall -Wextra -Werror" #rodar .c
 alias tc="./a.out ; rm a.out" #testar codigo
 alias norm="norminette -R CheckForbiddenSourceHeader"
 
 ##################################################
 #	Atalhos de compilação C
 ##################################################
-vmain()
-{
-    if [ -z $1 -o -z $2 ]
-    then
-        echo "vmain 1 0 - editar c01 e ex00"
-    else
-        if [ $2 -ge 10 ]
-        then
-            vim $(find c0$1/ex$2 -name '*.c') 
-        else
-            vim $(find c0$1/ex0$2 -name '*.c') 
-        fi
-    fi
-}
-
-roda()
-{
-    # local=$(find $1 -type f -name *.c -exec basename -s .sh {} \;)
-    #local=$(find $1 -name '*.c')
-    local=$1
-    
-    c ; gcc -Wall -Werror -Wextra -lbsd $local ; echo ; echo "--- Execucao ---" ; tc ; echo ; echo "----FIM----"
-}
 
 ##################################################
 #	Macros mais usadas Vim
