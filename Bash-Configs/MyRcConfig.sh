@@ -20,11 +20,13 @@ source ~/My-Linux/Bash-Configs/compile-flags.sh
 ##################################################
 alias c=clear
 alias cls="clear ; ls -mp"
+alias dls="cd ; clear ; ls -mp"
 alias py="python3"
 alias b=bash
 alias v=vim
 alias z=zsh
 alias ndi=mkdir
+alias ccat="clear ; cat "
 
 ##################################################
 #	Editar Bashrc, Zshrc, Vimrc e Meus alias
