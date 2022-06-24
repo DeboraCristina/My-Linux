@@ -1,5 +1,5 @@
 #Paste in your .vimrc config 
-let $config = '~/Home-Config/Vim-Configs/MyVimConfig'
+let $config = '~/My-Linux/Vim-Configs/MyVimConfig'
 source $config
 #InstallVundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
