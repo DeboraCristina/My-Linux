@@ -27,7 +27,7 @@ then
 	git clone $clonelink $fullpath
 
 fi
-	source $myBashConfigsPath/calculator.sh
+	source $fullpath/shell-calculator.sh
 
 ##################################################
 #	Atalhos curtos
