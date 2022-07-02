@@ -6,18 +6,28 @@
 ##################################################
 clear ; ls
 #chmod 777 *
+myBashConfigsPath="$HOME/My-Linux/Bash-Configs"
+myVimConfigsPath="$HOME/My-Linux/Vim-Configs"
 
 ##################################################
 #	Shell Utilits
 ##################################################
-source ~/My-Linux/Bash-Configs/chmod-help
-source ~/My-Linux/Bash-Configs/baseMain.sh
-source ~/My-Linux/Bash-Configs/compile-flags.sh
-if [[ ! -d "/home/debby/My-Linux/Bash-Configs/shell-calculator" ]]
+source $myBashConfigsPath/chmod-help
+source $myBashConfigsPath/baseMain.sh
+source $myBashConfigsPath/compile-flags.sh
+
+##################################################
+#	Shell Calculator
+##################################################
+fullpath="$myBashConfigsPath/shell-calculator"
+clonelink="https://github.com/DeboraCristina/Shell_Calculator.git"
+
+if [[ ! -d "$fullpath" ]]
 then
-	git clone https://github.com/DeboraCristina/Shell_Calculator.git ~/My-Linux/Bash-Configs/shell-calculator
+	git clone $clonelink $fullpath
+
 fi
-	source ~/My-Linux/Bash-Configs/shell-calculator/shell-calculator.sh
+	source $myBashConfigsPath/calculator.sh
 
 ##################################################
 #	Atalhos curtos
