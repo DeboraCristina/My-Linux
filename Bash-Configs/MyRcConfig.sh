@@ -4,7 +4,7 @@
 ##################################################
 #	Inicio
 ##################################################
-clear ; ls -pm
+clear ; ls
 #chmod 777 *
 
 ##################################################
@@ -12,8 +12,12 @@ clear ; ls -pm
 ##################################################
 source ~/My-Linux/Bash-Configs/chmod-help
 source ~/My-Linux/Bash-Configs/baseMain.sh
-source ~/My-Linux/Bash-Configs/shell-calculator.sh
 source ~/My-Linux/Bash-Configs/compile-flags.sh
+if [[ ! -d "/home/debby/My-Linux/Bash-Configs/shell-calculator" ]]
+then
+	git clone https://github.com/DeboraCristina/Shell_Calculator.git ~/My-Linux/Bash-Configs/shell-calculator
+fi
+	source ~/My-Linux/Bash-Configs/shell-calculator/shell-calculator.sh
 
 ##################################################
 #	Atalhos curtos
@@ -27,6 +31,7 @@ alias v=vim
 alias z=zsh
 alias ndi=mkdir
 alias ccat="clear ; cat "
+alias ls="ls -mp"
 
 ##################################################
 #	Editar Bashrc, Zshrc, Vimrc e Meus alias
@@ -39,6 +44,8 @@ alias vbash='vim ~/.bashrc'
 alias vzsh='vim ~/.zshrc'
 #editar vimrc
 alias vvim='vim ~/My-Linux/Vim-Configs/MyVimConfig'
+#acessar esse diretório
+alias configlinux="cd ; cd My-Linux/Bash-Configs ; cls"
 
 ##################################################
 #	Abreviacoes pro git
