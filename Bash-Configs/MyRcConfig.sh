@@ -14,21 +14,12 @@ myVimConfigsPath="$HOME/My-Linux/Vim-Configs"
 ##################################################
 source $myBashConfigsPath/chmod-help
 source $myBashConfigsPath/show-colors.sh
+
+##################################################
+#	Clang bases
+##################################################
 source $myBashConfigsPath/Clang-bases/baseMain.sh
 source $myBashConfigsPath/Clang-bases/baseMakefile.sh
-
-##################################################
-#	Shell Calculator
-##################################################
-fullpath="$myBashConfigsPath/shell-calculator"
-clonelink="https://github.com/DeboraCristina/Shell_Calculator.git"
-
-if [[ ! -d "$fullpath" ]]
-then
-	git clone $clonelink $fullpath
-
-fi
-	source $fullpath/shell-calculator.sh
 
 ##################################################
 #	remove files
