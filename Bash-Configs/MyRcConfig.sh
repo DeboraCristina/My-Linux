@@ -13,8 +13,9 @@ myVimConfigsPath="$HOME/My-Linux/Vim-Configs"
 #	Shell Utilits
 ##################################################
 source $myBashConfigsPath/chmod-help
-source $myBashConfigsPath/baseMain.sh
-source $myBashConfigsPath/compile-flags.sh
+source $myBashConfigsPath/show-colors.sh
+source $myBashConfigsPath/Clang-bases/baseMain.sh
+source $myBashConfigsPath/Clang-bases/baseMakefile.sh
 
 ##################################################
 #	Shell Calculator
