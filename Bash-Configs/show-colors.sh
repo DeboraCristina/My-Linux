@@ -124,5 +124,3 @@ Description: Show terminal colors.
 		echo "$help"
 	fi
 }
-
-showcolor $1
