@@ -40,6 +40,7 @@ alias z=zsh
 alias ndi=mkdir
 alias ccat="clear ; cat "
 alias ls="ls -mp"
+alias cd..="cd .."
 
 ##################################################
 #	Editar Bashrc, Zshrc, Vimrc e Meus alias
@@ -70,7 +71,7 @@ alias git-puxa="git pull"
 #	Coding in C
 ##################################################
 alias rc="cc -Wall -Wextra -Werror" #rodar .c
-alias tc="./a.out ; rm a.out" #testar codigo
+alias tc="./a.out ; rm -f a.out" #testar codigo
 alias norm="norminette -R CheckForbiddenSourceHeader"
 
 ##################################################
