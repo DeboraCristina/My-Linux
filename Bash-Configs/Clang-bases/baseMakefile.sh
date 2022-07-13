@@ -1,6 +1,6 @@
-bmain()
+bmake()
 {
-echo'NAME		=
+echo 'NAME		=
 
 SRCS		=
 
@@ -12,10 +12,14 @@ FLAGS		=	-Wall	-Wextra	-Werror
 
 REMOVE		=	rm -f
 
+AR			=	ar -rc
+
+MAKENOPRINT	=	make --no-print-directory
+
 %.o:	%.c
 	@$(COMPILER) $(FLAGS) -c $< -o $(<:%.c=%.o)
 
-$(NAME):
+$(NAME):	$(OBJS)
 
 all:	$(NAME)
 
