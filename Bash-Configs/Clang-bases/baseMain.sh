@@ -6,5 +6,5 @@ int	main(void)
 {
 	printf("Hello, World!\\n");
 	return (0);
-}' > $DIR/main.c
+}' > main.c
 }
