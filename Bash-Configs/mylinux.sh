@@ -55,7 +55,7 @@ alias cd..="cd .."
 #	Editar Bashrc, Zshrc, Vimrc e Meus alias
 ##################################################
 #editar meus alias
-alias val='vim ~/My-Linux/Bash-Configs/MyRcConfig.sh'
+alias val='vim ~/My-Linux/Bash-Configs/mylinux.sh.sh'
 #editar bashrc
 alias vbash='vim ~/.bashrc'
 #editar zsh
