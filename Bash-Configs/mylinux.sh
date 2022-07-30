@@ -17,6 +17,15 @@ source $myBashConfigsPath/show-colors.sh
 source $myBashConfigsPath/gitignore.sh
 
 ##################################################
+#	Check for Dynamic Wallpaper
+##################################################
+source $myBashConfigsPath/check_dynamic_wallpaper.sh
+if [[ "$V_DWALL" == "true" ]]
+then
+	alias dwall="bash $HOME/Dwall/dwall.sh"
+fi
+
+##################################################
 #	Clang bases
 ##################################################
 source $myBashConfigsPath/Clang-bases/baseMain.sh
@@ -73,6 +82,7 @@ alias git-puxa="git pull"
 alias rc="cc -Wall -Wextra -Werror" #rodar .c
 alias tc="./a.out ; rm -f a.out" #testar codigo
 alias norm="norminette -R CheckForbiddenSourceHeader"
+alias valgrid="valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes"
 
 ##################################################
 #	Atalhos de compilação C
