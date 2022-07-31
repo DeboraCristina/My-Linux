@@ -22,7 +22,7 @@ source $myBashConfigsPath/gitignore.sh
 source $myBashConfigsPath/check_dynamic_wallpaper.sh
 if [[ "$V_DWALL" == "true" ]]
 then
-	alias dwall="bash $HOME/Dwall/dwall.sh"
+	alias dwall="bash $HOME/Dwall/set_wallpaper.sh"
 fi
 
 ##################################################
@@ -55,7 +55,7 @@ alias cd..="cd .."
 #	Editar Bashrc, Zshrc, Vimrc e Meus alias
 ##################################################
 #editar meus alias
-alias val='vim ~/My-Linux/Bash-Configs/mylinux.sh.sh'
+alias val='vim ~/My-Linux/Bash-Configs/mylinux.sh'
 #editar bashrc
 alias vbash='vim ~/.bashrc'
 #editar zsh
