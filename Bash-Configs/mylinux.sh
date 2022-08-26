@@ -77,21 +77,10 @@ alias git-manda="git push"
 alias git-puxa="git pull"
 
 ##################################################
-#	Coding in C
-##################################################
-alias rc="cc -Wall -Wextra -Werror" #rodar .c
-alias tc="./a.out ; rm -f a.out" #testar codigo
-alias norm="norminette -R CheckForbiddenSourceHeader"
-alias valgrid="valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes"
-
-##################################################
-#	Atalhos de compilação C
-##################################################
-
-##################################################
 #	Macros mais usadas Vim
 ##################################################
 #abrir tudo ggVGzO
+#abrit linha VzO
 #fechar tudo ggVGzM€ýa
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ #
