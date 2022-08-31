@@ -187,7 +187,7 @@
 	"split
 		map <space>j <c-w>h
 		map <space>k <c-w>l
-		cmap s<cr> vsplit<cr>map 
+		cmap s<cr> vsplit<cr>
 
 	"move line
 		map <c-h> :m .-2<cr>

@@ -40,15 +40,15 @@ alias rm="rm -i"
 #	Atalhos curtos
 ##################################################
 alias c=clear
-alias cls="clear ; ls -mp"
-alias dls="cd ; clear ; ls -mp"
+alias cls="clear ; ls -p"
+alias dls="cd ; clear ; ls -p"
 alias py="python3"
 alias b=bash
 alias v=vim
 alias z=zsh
 alias ndi=mkdir
 alias ccat="clear ; cat "
-alias ls="ls -mp"
+alias ls="ls -p"
 alias cd..="cd .."
 
 ##################################################
