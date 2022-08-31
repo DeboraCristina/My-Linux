@@ -14,6 +14,7 @@ myVimConfigsPath="$HOME/My-Linux/Vim-Configs"
 ##################################################
 source $myBashConfigsPath/chmod-help.sh
 source $myBashConfigsPath/show-colors.sh
+source $myBashConfigsPath/alias42saopaulo.sh
 source $myBashConfigsPath/gitignore.sh
 
 ##################################################
