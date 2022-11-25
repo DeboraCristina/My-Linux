@@ -192,3 +192,12 @@
 	"move line
 		map <c-h> :m .-2<cr>
 		map <c-l> :m .+1<cr>
+
+	"macros Folding
+		"abre todos os Folding
+		map <F2> ggVGzO
+		"fecha todos os Folding
+		map <F3> GVggzM€ýagg
+		"abre por complato um Folding
+		map <F4> VzO
+		"map <F5> G
