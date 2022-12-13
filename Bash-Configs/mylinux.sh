@@ -16,6 +16,7 @@ source $myBashConfigsPath/chmod-help.sh
 source $myBashConfigsPath/show-colors.sh
 source $myBashConfigsPath/alias42saopaulo.sh
 source $myBashConfigsPath/gitignore.sh
+source $myBashConfigsPath/newGitRepository.sh
 
 ##################################################
 #	Check for Dynamic Wallpaper
@@ -74,7 +75,6 @@ alias cgs="clear;git status"
 alias ga="git add"
 alias gc-m="git commit -m"
 alias clone="git clone"
-alias git-manda="git push"
 alias git-puxa="git pull"
 
 ##################################################
