@@ -12,6 +12,7 @@ cd $HOME
 sudo $gerenciadorPacotes $flag install git
 sudo $gerenciadorPacotes $flag install vim
 sudo $gerenciadorPacotes $flag install zsh
+sudo $gerenciadorPacotes $flag install tldr
 sudo $gerenciadorPacotes update
 ######
 

@@ -1,0 +1,4 @@
+tlhelp()
+{
+	tldr $@
+}

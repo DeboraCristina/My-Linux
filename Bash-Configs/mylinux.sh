@@ -17,6 +17,7 @@ source $myBashConfigsPath/show-colors.sh
 source $myBashConfigsPath/alias42saopaulo.sh
 source $myBashConfigsPath/gitignore.sh
 source $myBashConfigsPath/newGitRepository.sh
+source $myBashConfigsPath/tldr2tlhelp.sh
 
 ##################################################
 #	Check for Dynamic Wallpaper
