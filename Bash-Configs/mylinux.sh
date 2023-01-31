@@ -16,7 +16,6 @@ source $myBashConfigsPath/chmod_help/chmod_help.sh	# chmodhelp
 source $myBashConfigsPath/show-colors.sh			# showcolor
 source $myBashConfigsPath/gitignore.sh				# gitignore
 source $myBashConfigsPath/newGitRepository.sh		# newrepo
-# source $myBashConfigsPath/alias42saopaulo.sh
 
 ##################################################
 #	Check for Dynamic Wallpaper
@@ -26,12 +25,6 @@ if [[ "$V_DWALL" == "true" ]]
 then
 	alias dwall="bash $HOME/Dwall/set_wallpaper.sh"
 fi
-
-##################################################
-#	Clang bases
-##################################################
-source $myBashConfigsPath/Clang-bases/baseMain.sh
-source $myBashConfigsPath/Clang-bases/baseMakefile.sh
 
 ##################################################
 #	tldr - help comands
