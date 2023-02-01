@@ -201,3 +201,6 @@
 		"abre por complato um Folding
 		map <F4> VzO
 		"map <F5> G
+	
+	"upper case
+		map <space>u veU
