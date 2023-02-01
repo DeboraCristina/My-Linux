@@ -47,9 +47,10 @@ alias b=bash
 alias v=vim
 alias z=zsh
 alias ndi=mkdir
-alias ccat="clear ; cat "
+alias cat='batcat'
+alias ccat="clear ; batcat"
 alias ls="ls -p"
-alias cd..="cd .."
+alias ..="cd .."
 
 ##################################################
 #	Editar Bashrc, Zshrc, Vimrc e Meus alias
