@@ -13,6 +13,7 @@ sudo $gerenciadorPacotes $flag install git
 sudo $gerenciadorPacotes $flag install vim
 sudo $gerenciadorPacotes $flag install zsh
 sudo $gerenciadorPacotes $flag install tldr
+sudo $gerenciadorPacotes $flag install bat
 sudo $gerenciadorPacotes update
 ######
 
