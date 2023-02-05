@@ -160,34 +160,31 @@
 		map h <up>
 
 	"inicio e fim da linha
-		map f $
-		map t 0
-		map gf G
+		map f	$
+		map t	0
+		map gf	G
 
 	"esc mais pertinho
-		imap 3f <esc>
-		imap 3F <esc>
-	
+		imap 3f	<esc>
+		imap 3F	<esc>
+
 	"selecionar linha
 		map <space>v <c-v>
 
-	"salvar/salvar e sair
-		map mm :w<cr>
-		map ms :wq<cr>
-		map mas :wqa<cr>
-		map mfs :q!<cr>
-		map mfa :qa!<cr>
+	"salvar/salvar_e_sair
+		map <C-s>	:w<cr>
+		map <C-S-s>	:wa<cr>
+
+	"sair
+		map <C-w>	:q<cr>
+		map <C-S-w>	:q!<cr>
+		map <S-w>	:qa<cr>
 
 	"tab
 		map etn :tabnew<space>
 		map eta :tab ball<cr>
-		map <space>h <c-pageup>
-		map <space>l <c-pagedown>
-
-	"split
-		map <space>j <c-w>h
-		map <space>k <c-w>l
-		cmap s<cr> vsplit<cr>
+		map <space>j <c-pageup>
+		map <space>k <c-pagedown>
 
 	"move line
 		map <c-h> :m .-2<cr>
@@ -200,7 +197,6 @@
 		map <F3> GVggzM€ýagg
 		"abre por complato um Folding
 		map <F4> VzO
-		"map <F5> G
 	
 	"upper case
-		map <space>u veU
+		map <space>u U
