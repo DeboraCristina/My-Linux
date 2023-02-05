@@ -52,8 +52,8 @@ alias b=bash
 alias v=vim
 alias z=zsh
 alias ndi=mkdir
-alias cat='batcat'
-alias ccat="clear ; batcat"
+alias bat='batcat'
+alias cbat="clear ; batcat"
 alias ls="ls -p"
 alias ..="cd .."
 
@@ -76,10 +76,10 @@ alias configlinux="cd ; cd My-Linux/Bash-Configs ; cls"
 ##################################################
 alias gs="git status"
 alias cgs="clear;git status"
-alias ga="git add"
-alias gc-m="git commit -m"
+alias gadd="git add"
+alias commit="git commit -m"
+alias glog="git log"
 alias clone="git clone"
-alias git-puxa="git pull"
 
 ##################################################
 #	Macros mais usadas Vim
