@@ -58,6 +58,13 @@ alias ls="ls -p"
 alias ..="cd .."
 
 ##################################################
+#	Atalhos com sudo
+##################################################
+alias update="sudo apt update"
+alias upgrate="sudo apt upgrate"
+alias install="sudo apt install -y "
+
+##################################################
 #	Editar Bashrc, Zshrc, Vimrc e Meus alias
 ##################################################
 #editar meus alias
