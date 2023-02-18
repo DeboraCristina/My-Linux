@@ -6,6 +6,7 @@ instalar()
 instalar_programas_repositorio()
 {
     instalar git
+    instalar python3-pip
 	instalar vim
 	instalar zsh
 	instalar tldr # substitue a flag --help

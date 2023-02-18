@@ -1,19 +1,18 @@
 # ********************************************* #
 # DEFINIÇÕES
-MediBangLink="https://medibangpaint.com/static/installer/MediBangPaintPro/MediBangPaintProSetup-28.4-32bit.exe"
-local_de_arquivos="$HOME/My-Linux/install_files"
-source "$local_de_arquivos/variaveis_gerais.sh"
+local_dos_arquivos="$HOME/install_files"
+source "$local_dos_arquivos/variaveis_gerais.sh"
+source "$local_dos_arquivos/cores.sh"
 
 
 # IMPORTAÇÕES
-source "$local_de_arquivos/cores.sh"
-source "$local_de_arquivos/instalar_programas.sh"
-source "$local_de_arquivos/configurar_python.sh"
-source "$local_de_arquivos/configurar_git.sh"
-source "$local_de_arquivos/gerar_chave_ssh.sh"
-source "$local_de_arquivos/checar_chave_github.sh"
-source "$local_de_arquivos/configurar_vim.sh"
-source "$local_de_arquivos/configurar_zsh.sh"
+source "$local_dos_arquivos/instalar_programas.sh"
+source "$local_dos_arquivos/configurar_python.sh"
+source "$local_dos_arquivos/configurar_git.sh"
+source "$local_dos_arquivos/gerar_chave_ssh.sh"
+source "$local_dos_arquivos/checar_chave_github.sh"
+source "$local_dos_arquivos/configurar_vim.sh"
+source "$local_dos_arquivos/configurar_zsh.sh"
 
 
 # INSTALANDO

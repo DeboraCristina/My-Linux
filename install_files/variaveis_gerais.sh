@@ -16,3 +16,5 @@ diretorio_de_configuracoes="$HOME/My-Linux"
 arquivo_de_configuracao_vim="$HOME/My-Linux/Vim-Configs/MyVimConfig"
 
 instalar_zsh="falso"
+
+MediBangLink="https://medibangpaint.com/static/installer/MediBangPaintPro/MediBangPaintProSetup-28.4-32bit.exe"

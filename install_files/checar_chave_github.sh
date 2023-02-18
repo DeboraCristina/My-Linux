@@ -1,6 +1,3 @@
-source "./variaveis_gerais.sh"
-source "./cores.sh"
-
 checar_se_a_chave_foi_adicionada()
 {
 	DEIXAR_TEXTO_BRANCO
