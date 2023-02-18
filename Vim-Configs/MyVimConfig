@@ -173,12 +173,9 @@
 
 	"salvar/salvar_e_sair
 		map <C-s>	:w<cr>
-		map <C-S-s>	:wa<cr>
 
 	"sair
 		map <C-w>	:q<cr>
-		map <C-S-w>	:q!<cr>
-		map <S-w>	:qa<cr>
 
 	"tab
 		map etn :tabnew<space>
