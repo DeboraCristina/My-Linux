@@ -1,12 +1,13 @@
 # ********************************************* #
 # DEFINIÇÕES
+MediBangLink="https://medibangpaint.com/static/installer/MediBangPaintPro/MediBangPaintProSetup-28.4-32bit.exe"
 local_de_arquivos="$HOME/My-Linux/install_files"
 source "$local_de_arquivos/variaveis_gerais.sh"
 
 
 # IMPORTAÇÕES
 source "$local_de_arquivos/cores.sh"
-source "$local_de_arquivos/instalar_programas_basicos.sh"
+source "$local_de_arquivos/instalar_programas.sh"
 source "$local_de_arquivos/configurar_python.sh"
 source "$local_de_arquivos/configurar_git.sh"
 source "$local_de_arquivos/gerar_chave_ssh.sh"
@@ -21,8 +22,10 @@ cd $HOME
 configurar_git
 configurar_python
 gerar_chave_ssh
-instalar_programas_basicos
+instalar_programas
 checar_chave_github
+
+firefox $MediBangLink
 
 if [ "$chave_adicionada" == "true" ]
 then
