@@ -63,6 +63,7 @@ alias ..="cd .."
 alias update="sudo apt update"
 alias upgrate="sudo apt upgrate"
 alias install="sudo apt install -y "
+alias full-upgrade="sudo apt update && sudo apt upgrade -y && flatpak update -y"
 
 ##################################################
 #	Editar Bashrc, Zshrc, Vimrc e Meus alias
