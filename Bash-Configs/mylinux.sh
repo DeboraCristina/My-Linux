@@ -2,6 +2,21 @@
 #!/bin/bash
 
 ##################################################
+#	Sumário
+##################################################
+#- Inicio
+#- Shell Utilits
+#- Check for Dynamic Wallpaper
+#- tldr - help comands
+#- remove files
+#- Length strings
+#- Atalhos curtos
+#- Atalhos com sudo
+#- Editar Bashrc, Zshrc, Vimrc e Meus alias
+#- Abreviacoes pro git
+#- Macros mais usadas Vim
+
+##################################################
 #	Inicio
 ##################################################
 clear ; ls
