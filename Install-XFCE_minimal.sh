@@ -39,3 +39,6 @@ apt --no-install-recommends -y install cups                         # driver gen
 
 apt install -y firefox-esr                                   # firefox
 apt install -y firefox-esr-l10n-pt-br                        # pacote de idiomas pt-br firefox
+
+apt updata
+apt full-upgrade
