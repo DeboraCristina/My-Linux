@@ -42,3 +42,5 @@ apt install -y firefox-esr-l10n-pt-br                        # pacote de idiomas
 
 apt updata
 apt full-upgrade
+
+reboot now
