@@ -24,12 +24,12 @@ def check_github_connection() -> bool:
     return False
 
 
-def check_ssh_is_installed() -> None:
+def check_ssh_is_installed(except_file) -> None:
     ssh_installed = __is_ssh_installed()
 
     if not ssh_installed:
         if not __install_ssh():
-            os.system('echo \"ssh not installed\">> /tmp/install_linux_except')
+            os.system(f'echo \"ssh not installed\">> {except_file}')
 
 
 def generate_ssh_key(email):
@@ -37,7 +37,7 @@ def generate_ssh_key(email):
     os.system('''eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
 ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-cat ~/.ssh/id_rsa.pub >>		"~/.SSHKEY"''')
+cat ~/.ssh/id_rsa.pub >> $HOME/.SSHKEY''')
 
 
 def __install(package: str):
@@ -120,9 +120,7 @@ def config_vim():
 source \$config\" >> .vimrc""")
 
 
-def full_install():
-    git_email = ''
-    git_user_name = ''
+def full_install(except_file, git_email, git_user_name):
     debian_packages = get_debian_basic_packages()
     flatpack_packages = get_flatpack_packages()
 
@@ -132,7 +130,7 @@ def full_install():
     os.system('sudo apt update')
 
     config_python()
-    check_ssh_is_installed()
+    check_ssh_is_installed(except_file)
     config_git(git_email, git_user_name)
     generate_ssh_key(git_email)
     while True:
@@ -149,9 +147,7 @@ def full_install():
     os.system('sudo apt full-upgrade')
 
 
-def basic_install():
-    git_email = ''
-    git_user_name = ''
+def basic_install(git_email, git_user_name):
     debian_packages = get_debian_basic_packages()
 
     install_programs(debian_packages)
@@ -160,27 +156,101 @@ def basic_install():
     generate_ssh_key(git_email)
 
 
-def install():
-    while True:
-        is_basic = input("Fazer instalacao basica? [s/n]: ").lower()
-        if is_basic == 's' or is_basic == 'n':
-            break
-    if is_basic == 's':
-        basic_install()
-    else:
-        full_install()
+def clear() -> None:
+    os.system('clear')
 
-    with open('', 'r') as fd:
-        except_file = fd.read()
+
+def show_except_file(except_file) -> bool:
+    result = os.system(f'test -e {except_file}')
+    if result == 0: # existe
+        with open(except_file, 'r') as fd:
+            print(fd.read())
+    return (result == 0)
+
+
+def install(except_file, options, git_email, git_user_name) -> None:
     while True:
-        print('''* 0 * exit *
-* 1 * read exception file *''')
-        op = input('choose: ')
-        if op == '0':
-            break
+        clear()
+        
+        i = 1
+        for option in options:
+            print(f'{i} - {option}')
+            i += 1
+        print('e - Exit')
+
+        op = input('Choose: ')
         if op == '1':
-            print(except_file)
+            print('You choosed \033[1;97mBasic Installation\033[0m!')
+            input()
+            basic_install(git_email, git_user_name)
+            print("Basic Installation Fineshed")
+            show_except_file(except_file)
+            input()
+        elif op == '2':
+            print('You choosed \033[1;97mFull Installation\033[0m!')
+            input()
+            full_install(except_file, git_email, git_user_name)
+            print("Basic Installation Fineshed")
+            input()
+        elif op == '3':
+            print('You choosed \033[1;97mCustom Installation\033[0m!')
+            print('This function has not been implemented')
+            # input()
+            # TODO: Function
+            print("Custom Installation Fineshed")
+            input()
+        elif op == '4':
+            clear()
+            print('Basic Packages:')
+            packages = get_debian_basic_packages()
+            for p in packages:
+                print(p)
+            input()
+        elif op == '5':
+            clear()
+            print('Other Packages:')
+            packages = get_debian_other_packages()
+            for p in packages:
+                print(p)
+            input()
+        elif op == '6':
+            clear()
+            print('Flatpack Packages:')
+            packages = get_flatpack_packages()
+            for p in packages:
+                print(p)
+            input()
+        elif op == '7':
+            except_file_exists = show_except_file(except_file)
+            if not except_file_exists:
+                print('Except File not exists')
+            input()
+        elif op == '8':
+            generate_ssh_key(git_email)
+        elif op.lower() == 'e':
+            break
+        else:
+            print('Opcão inválida')
+            input()
 
 
-if __name__ == '__main__':
-    install()
+def main():
+    git_email = 'deboracristinaproficional1@gmail.com'
+    git_user_name = 'DeboraCristina'
+    except_file = '/tmp/install_linux_except'
+    options = [
+        'Basic Installation',
+        'Full Installation',
+        'Custom Installation',
+        'Show Basic Packages',
+        'Show Other Packages',
+        'Show Flatpack Packages',
+        'Show Exception File',
+        'Generate SHH Key',
+    ]
+    clear()
+    install(except_file, options, git_email, git_user_name)
+
+
+if __name__ == "__main__":
+    main()
