@@ -1,6 +1,97 @@
 import os
 
 
+def clear() -> None:
+    os.system('clear')
+
+
+# Custom Installation
+def show_packages(packages: list, chosen: list) -> None:
+    clear()
+    len_packages = len(packages)
+    for index in range(len_packages):
+        char = '*' if len(chosen) > 0 and index in chosen else ' '
+        print(f'{index + 1}. [{char}] {packages[index]}')
+
+
+def choose(packages_list: list) -> list:
+    chosen = []
+    while True:
+        show_packages(packages_list, chosen)
+
+        print('\n* Choose packages (ex: \'1,2,4\' or \'1-4\' or \'a to all\')')
+        print('* [Select the same package to deselect it]')
+        print('* Type \'e\' to end selection\n')
+        op = input('Choose: ')
+        if op.lower() == 'e':
+            break
+        elif op.lower() == 'a':
+            len_pack = len(packages_list)
+            for i in range(len_pack):
+                if i not in chosen:
+                    chosen.append(i)
+                else:
+                    chosen.remove(i)
+        elif op.replace(' ', '').replace('-', '').replace(',', '').isnumeric():
+            op = op.replace(' ', '')
+            if '-' in op and op.count('-') == 1:
+                packages_index = op.split('-')
+
+                start = int(packages_index[0]) - 1
+                end = int(packages_index[1])
+                for index in range(start, end):
+                    index = int(index)
+                    if index not in chosen:
+                        chosen.append(index)
+                    else:
+                        chosen.remove(index)
+            elif ',' in op:
+                packages_index = op.split(',')
+
+                for index in packages_index:
+                    index = int(index)-1
+                    if index not in chosen:
+                        chosen.append(index)
+                    else:
+                        chosen.remove(index)
+            else:
+                index = int(op)-1
+                if index not in chosen:
+                    chosen.append(index)
+                else:
+                    chosen.remove(index)
+        else:
+            print('invalid option')
+    result = []
+    len_pack = len(packages_list)
+    for i in chosen:
+        result.append(packages_list[i])
+    return result
+
+
+def choose_packages(all_packages: list) -> list:
+    if len(all_packages) <= 0:
+        raise Exception('Empty List')
+
+    for p in all_packages:
+        if type(p) is not list:
+            raise Exception('Invalid list package')
+
+    chosen_packages = []
+    for packages in all_packages:
+        chosen_packages.append(choose(packages))
+
+    return chosen_packages
+
+
+def install_selected_packages(all_packages: list, installer: callable) -> None:
+    for package_list in all_packages:
+        for p in package_list:
+            installer(p)
+
+# Custom Installation
+
+
 def __is_ssh_installed() -> bool:
     with os.popen('apt list | grep ^openssh') as cmd:
         cmd_exit = cmd.read()
@@ -40,12 +131,16 @@ ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 cat ~/.ssh/id_rsa.pub >> $HOME/.SSHKEY''')
 
 
-def __install(package: str):
-    os.system(f'sudo apt install -y {package}')
+def install_deb(package: str):
+    command = 'sudo apt install -y'
+    command = 'echo apt'
+    os.system(f'{command} {package}')
 
 
-def __install_flatpack(name_package: str):
-    os.system(f'flatpak install -y flathub {name_package}')
+def install_flatpack(name_package: str):
+    command = 'flatpak install -y flathub'
+    command = 'echo flatpack'
+    os.system(f'{command} {name_package}')
 
 
 def get_debian_basic_packages():
@@ -87,10 +182,10 @@ def get_flatpack_packages():
 def install_programs(debian_packages: list, flatpack_packages: list = ()):
     if len(debian_packages) > 0:
         for package in debian_packages:
-            __install(package)
+            install_deb(package)
     if len(flatpack_packages) > 0:
         for package in flatpack_packages:
-            __install_flatpack(package)
+            install_flatpack(package)
 
 
 def config_git(email, user_name):
@@ -156,8 +251,45 @@ def basic_install(git_email, git_user_name):
     generate_ssh_key(git_email)
 
 
-def clear() -> None:
-    os.system('clear')
+def custom_isntall(except_file, git_email, git_user_name):
+    basic_debian_packages = get_debian_basic_packages()
+    other_debian_packages = get_debian_other_packages()
+    flatpack_packages = get_flatpack_packages()
+
+    selected_debian_packages = choose_packages(
+        [basic_debian_packages, other_debian_packages])
+    selected_flatpack_packages = choose_packages([flatpack_packages])
+
+    install_selected_packages(selected_debian_packages, install_deb)
+    install_selected_packages(selected_flatpack_packages, install_flatpack)
+
+    os.system('sudo apt update')
+
+    config_python()
+    check_ssh_is_installed(except_file)
+    config_git(git_email, git_user_name)
+    generate_ssh_key(git_email)
+
+    while True:
+        op = input('Connect on GitHub? [s/n] ')
+
+        if op.lower == 's':
+            while True:
+                input('waiting github connection... [press any key if connect]')
+                connection = check_github_connection()
+                if connection:
+                    break
+                else:
+                    print('\033[1;91mcant connect. Try again!\nMake sure that key is on github settings\033[0m')
+            os.system('git clone git@github.com:DeboraCristina/My-Linux.git')
+            config_vim()
+            config_zsh()
+        elif op.lower() == 'n':
+            break
+    
+    os.system('sudo apt update')
+    os.system('sudo apt full-upgrade')
+    pass
 
 
 def show_except_file(except_file) -> bool:
@@ -183,21 +315,21 @@ def install(except_file, options, git_email, git_user_name) -> None:
             print('You choosed \033[1;97mBasic Installation\033[0m!')
             input()
             basic_install(git_email, git_user_name)
-            print("Basic Installation Fineshed")
+            print("\n\n\033[1;97mBasic Installation Fineshed\033[0m")
             show_except_file(except_file)
             input()
         elif op == '2':
             print('You choosed \033[1;97mFull Installation\033[0m!')
             input()
             full_install(except_file, git_email, git_user_name)
-            print("Basic Installation Fineshed")
+            print("\n\n\033[1;97mFull Installation Fineshed\033[0m")
             input()
         elif op == '3':
             print('You choosed \033[1;97mCustom Installation\033[0m!')
             print('This function has not been implemented')
-            # input()
-            # TODO: Function
-            print("Custom Installation Fineshed")
+            input()
+            custom_isntall(except_file, git_email, git_user_name)
+            print("\n\n\033[1;97mCustom Installation Fineshed\033[0m")
             input()
         elif op == '4':
             clear()
