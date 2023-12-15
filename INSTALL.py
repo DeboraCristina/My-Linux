@@ -133,13 +133,11 @@ cat ~/.ssh/id_rsa.pub >> $HOME/.SSHKEY''')
 
 def install_deb(package: str):
     command = 'sudo apt install -y'
-    command = 'echo apt'
     os.system(f'{command} {package}')
 
 
 def install_flatpack(name_package: str):
     command = 'flatpak install -y flathub'
-    command = 'echo flatpack'
     os.system(f'{command} {name_package}')
 
 
@@ -161,6 +159,7 @@ def get_debian_other_packages():
         'megasync',
         'tldr',
         'flatpak',
+        'virtualbox',
     ]
     return packages
 
@@ -175,6 +174,7 @@ def get_flatpack_packages():
         'com.dropbox.Client',
         'org.onlyoffice.desktopeditors',
         'com.usebottles.bottles',
+        'org.gnome.Boxes',
     ]
     return flatpack
 
@@ -265,6 +265,13 @@ def custom_isntall(except_file, git_email, git_user_name):
 
     os.system('sudo apt update')
 
+    while True:
+        op = input('\033[1;92mContinue Custom Installation?\033[0m [s/n]')
+        if op.lower == 's':
+            break
+        elif op.lower() == 'n':
+            return
+
     config_python()
     check_ssh_is_installed(except_file)
     config_git(git_email, git_user_name)
@@ -326,7 +333,6 @@ def install(except_file, options, git_email, git_user_name) -> None:
             input()
         elif op == '3':
             print('You choosed \033[1;97mCustom Installation\033[0m!')
-            print('This function has not been implemented')
             input()
             custom_isntall(except_file, git_email, git_user_name)
             print("\n\n\033[1;97mCustom Installation Fineshed\033[0m")
