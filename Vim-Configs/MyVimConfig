@@ -85,7 +85,9 @@
     let g:rehash256 = 1
 
     "Cursor
-    set guicursor=n:block
+	set guicursor=n:block
+	let &t_SI="\e[6 q"
+	let &t_EI="\e[2 q"
 
 	" Tab visible
 	set listchars=eol:$,tab:-->,trail:~,extends:>,precedes:<

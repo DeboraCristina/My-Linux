@@ -59,6 +59,8 @@ length(){ python3 $myBashConfigsPath/len.py $@ }
 ##################################################
 #	Atalhos curtos
 ##################################################
+alias dk='docker'
+alias dkc='docker-compose'
 alias c=clear
 alias cls="clear ; ls -p"
 alias dls="cd ; clear ; ls -p"
@@ -69,6 +71,8 @@ alias z=zsh
 alias ndi=mkdir
 alias bat='batcat'
 alias cbat="clear ; batcat"
+alias cat="echo Use o comando 'bat';cat"
+alias ccat="echo Use o comando 'bat';clear ; cat"
 alias ls="ls -p"
 alias ..="cd .."
 
